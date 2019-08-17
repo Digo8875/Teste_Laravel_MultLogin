@@ -1,0 +1,19 @@
+Talves seja necessário você dar um "composer install" no seu da aplicação laravel, após seu comando git clone <URL>,
+para instalar os pacotes, já que o laravel passa o arquivo composer.lock e não toda a aplicação
+
+Para o login do facebook API foi necessário forçar o https no localhost
+
+no config/app.php
+'url' => env('APP_URL', 'https://localhost'),
+
+
+Para rodar a aplicação crie eu DB corretamente e configureo no arquivo .env
+
+O Laravel não permite o compartilhamento do arquivo .env, assim, você deverá tomar o arquivo
+.env.example como  exemplo.
+copie todo o código deste arquivo e cole no novo arquivo .env
+
+configure todas as partes do .env que estiverem entre <> para poder usar as funcionalidades.
+
+É necessário criar uma conta no developer.facebook e developers do google.
+Assim como configurar uma API em cada um deles para gerar suas credenciais.
