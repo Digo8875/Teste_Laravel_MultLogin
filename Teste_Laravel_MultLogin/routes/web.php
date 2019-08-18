@@ -31,3 +31,8 @@ Route::get('{driver}/callback', 'Auth\LoginController@handleProviderCallback')
     ->where('driver', implode('|', config('auth.socialite.drivers')));
 
 //#########################################
+
+
+Route::get('/admin', function () {
+    return view('home_admin');
+})->middleware('admin');
