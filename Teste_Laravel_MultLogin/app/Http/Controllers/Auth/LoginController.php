@@ -62,9 +62,11 @@ class LoginController extends Controller
             return redirect()->route('login');
         }
 
-        $existingUser = User::where('email', $user->getEmail())->first();
+        $existingUser = User::withTrashed()->where('email', $user->getEmail())->first();
 
-        if ($existingUser) {
+        if ($existingUser)
+        {
+            $existingUser->restore();
             auth()->login($existingUser, true);
         } else {
             $newUser                    = new User;
